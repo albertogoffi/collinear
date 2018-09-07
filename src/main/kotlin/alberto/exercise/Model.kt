@@ -16,6 +16,13 @@ data class Line(val points: List<Point>) {
 
 typealias Space = List<Point>
 
+/**
+ * Computes all the line segments passing through *at least* [minNumberOfPoints].
+ *
+ * @param space set of points in the space.
+ * @param minNumberOfPoints minimal number of points that a line has to be composed of.
+ * @return empty list if [minNumberOfPoints] is 1 or less. The list of line segments otherwise.
+ */
 fun computeLines(space: Space, minNumberOfPoints: Int): List<Line> {
     val lines = mutableListOf<Line>()
     if (minNumberOfPoints <= 1) return lines
@@ -32,6 +39,12 @@ fun computeLines(space: Space, minNumberOfPoints: Int): List<Line> {
     return lines
 }
 
+
+/**
+ * Checks whether all the points in the given [points] list are collinear.
+ *
+ * @return `true` if the given [points] are all collinear, `false` otherwise.
+ */
 fun areCollinear(points: List<Point>): Boolean {
     if (points.size <= 2) return true
 
@@ -43,4 +56,7 @@ fun areCollinear(points: List<Point>): Boolean {
     }
 }
 
+/**
+ * Computes the area of the triangle defined by the given three points.
+ */
 fun triangleArea(a: Point, b: Point, c: Point) = a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)
