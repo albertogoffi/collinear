@@ -31,3 +31,14 @@ Start the application running the command: `./gradlew bootRun`. Then requests ca
 - Get all the line segments passing through at least N points
 
     ```curl http://localhost:8080/lines/N```
+
+## Code Structure
+
+The source code is contained in [src/main/kotlin/alberto.exercise](src/main/kotlin/alberto/exercise).
+The code is organized in three files:
+
+1) `Application.kt`: Spring boot application.
+2) `SpaceController.kt`: Controller that handles requests.
+3) `Model.kt`: Classes and algorithms.
+
+Tests can be found in [src/test/kotlin/alberto.exercise](src/test/kotlin/alberto/exercise).
