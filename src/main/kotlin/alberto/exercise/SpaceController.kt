@@ -30,12 +30,3 @@ class SpaceController {
         return computeLines(space, minNumberOfPoints).joinToString(",", "[", "]")
     }
 }
-
-private fun serializeToJSON(lines: List<Line>): String {
-    var result = "["
-    for (line in lines) {
-        result += line
-    }
-    result += "]"
-    return result
-}
